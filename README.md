@@ -1,73 +1,56 @@
 # U-Net Based Multi-Organ Segmentation of Abdominal CT (FLARE21)
 
-This repository contains notebooks and materials for a U-Net based abdominal multi-organ segmentation project (originally developed on Kaggle).
+This repository contains notebooks for abdominal multi-organ segmentation using a U-Net style model, developed on Kaggle and exported to GitHub.
 
-NOTE:
-- This repo intentionally does NOT include any dataset files (CT volumes / masks) or trained weights.
-- The notebooks may still contain Kaggle-specific paths (e.g., /kaggle/input/...). I kept them unchanged as requested.
+## Highlights
+- Multi-class segmentation (background excluded in macro metrics)
+- 3D → 2D slice preprocessing workflow
+- Evaluation includes Dice/F1, IoU, precision/recall, pixel accuracy, and a validation confusion matrix
 
-## Contents
-
-- notebooks/
-  - flare21-3d-to-2d-conversion.ipynb
-  - flare21-3d-to-2d-conversion(slice).ipynb
-- src/ (optional; for refactoring reusable code later)
-- assets/ (optional; add qualitative result screenshots here)
-- data/ (local only — should be ignored by git)
-- models/ (local only — should be ignored by git)
-
-## Project Summary
-
-- Task: Multi-organ semantic segmentation on abdominal CT
-- Approach: U-Net style encoder–decoder segmentation model
-- Preprocessing: Includes a 3D -> 2D slice conversion workflow (see notebooks)
+## Repository Structure
+- `notebooks/` – project notebooks
+- `assets/` – training curves and qualitative results used in this README
+- `data/` – local dataset directory (not tracked)
+- `models/` – local checkpoints/weights (not tracked)
 
 ## Dataset
-
 This project uses the FLARE21 dataset.
+- Do not upload medical imaging datasets to this repository.
+- Keep the dataset locally under `data/` (your `.gitignore` should exclude it).
 
-- Do NOT upload medical imaging datasets to GitHub.
-- Download the dataset from the official source and keep it locally.
-
-Suggested local structure (example):
+Example local structure:
 
     data/
       flare21/
         TrainingImg/
         TrainingMask/
 
-## How to Use (Kaggle)
+## Running on Kaggle
+If you want to run without changing paths, run the original notebook on Kaggle:
+https://www.kaggle.com/code/samirmahmud28/u-net-based-multi-organ-segmentation-of-abdominal
 
-These notebooks were created for Kaggle. The most reliable way to run them without modification is:
+## Running Locally
+These notebooks were originally written for Kaggle and may include Kaggle-specific paths (e.g., `/kaggle/input/...`).
+To run locally you may need to update paths to your local `data/` directory.
 
-1) Open the Kaggle notebook link (below)
-2) Fork / Copy the notebook
-3) Attach the dataset in Kaggle
-4) Run all cells
-
-## How to Use (Local)
-
-You can run locally, but you may need to adjust file paths if the notebooks reference Kaggle directories.
-
-1) Create environment
+Create a virtual environment:
 
     python -m venv .venv
 
-    Windows:
-      .venv\Scripts\activate
+Activate it:
 
-    macOS/Linux:
-      source .venv/bin/activate
+    Windows: .venv\Scripts\activate
+    macOS/Linux: source .venv/bin/activate
 
-2) Install dependencies
+Install dependencies:
 
     pip install -r requirements.txt
 
-3) Start Jupyter
+Launch Jupyter:
 
     jupyter lab
 
-Open the notebooks under notebooks/.
+Open notebooks from `notebooks/`.
 
 ## Results
 
@@ -85,11 +68,4 @@ Open the notebooks under notebooks/.
 ![Pixel Accuracy](assets/Pixel_Accuracy.png)
 
 ### Confusion Matrix (Validation)
-![Confusion Matrix](assets/Normalized_Confusion_Matrix_Validation.png)
-
-## Links
-
-Kaggle (main project):
-https://www.kaggle.com/code/samirmahmud28/u-net-based-multi-organ-segmentation-of-abdominal
-
-
+<img src="assets/Normalized_Confusion_Matrix_(Validation).png" alt="Normalized Confusion Matrix (Validation)">
