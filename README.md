@@ -68,4 +68,11 @@ Open notebooks from `notebooks/`.
 ![Pixel Accuracy](assets/Pixel_Accuracy.png)
 
 ### Confusion Matrix (Validation)
-<img src="assets/Normalized_Confusion_Matrix_(Validation).png" alt="Normalized Confusion Matrix (Validation)">
+![Confusion Matrix](assets/Normalized_Confusion_Matrix_Validation.png)
+
+## Links
+
+Kaggle (main project):
+https://www.kaggle.com/code/samirmahmud28/u-net-based-multi-organ-segmentation-of-abdominal
+
+
