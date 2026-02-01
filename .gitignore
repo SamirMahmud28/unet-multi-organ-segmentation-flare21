@@ -1,0 +1,27 @@
+# data / artifacts (don't upload)
+data/
+models/
+outputs/
+artifacts/
+*.nii
+*.nii.gz
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.onnx
+
+# jupyter
+.ipynb_checkpoints/
+*.log
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
